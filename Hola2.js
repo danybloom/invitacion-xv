@@ -61,8 +61,4 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> db33fa3
