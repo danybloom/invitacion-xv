@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,400&display=swap');
+
+/* --- ESTILOS BASE --- */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f7f7f9;
+    background-image: url(background.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #333333;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+/* --- TÍTULOS CON DEGRADADO (h1 y h3) --- */
+h1, h3 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    background: linear-gradient(135deg, #bcc6cc 0%, #eee 25%, #9aa2a6 50%, #f6f6f6 75%, #8a9597 100%);
+    -webkit-background-clip: text;
+    background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+h1 { font-size: 3rem; }
+h3 { font-size: 2.5rem; }
+
+/* --- TÍTULOS DE SECCIÓN UNIFICADOS (h2) --- */
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #2d3436; /* Gris oscuro elegante */
+    margin-bottom: 20px;
+}
+
+/* --- ESTILOS INTRO (SOBRE + BOTÓN) --- */
+#intro-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: #f7f7f9; display: flex; flex-direction: column; 
+    justify-content: center; align-items: center; gap: 40px; 
+    z-index: 9999; transition: opacity 0.8s ease, visibility 0.8s ease;
+    padding: 20px; box-sizing: border-box;
+}
+
+.envelope-container { max-width: 500px; width: 85%; display: flex; justify-content: center; }
+.envelope-img { width: 100%; height: auto; filter: drop-shadow(0px 12px 24px rgba(0,0,0,0.12)); }
+
+#btn-entrar {
+    background: linear-gradient(135deg, #bdc3c7 0%, #2c3e50 100%);
+    color: #ffffff; border: 1px solid #b2bec3; padding: 16px 50px;
+    font-size: 1.4rem; font-family: 'Playfair Display', serif; 
+    border-radius: 18px; cursor: pointer;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    transition: all 0.3s ease; width: 85%; max-width: 450px;
+}
+
+#btn-entrar:hover { background: linear-gradient(135deg, #c8d6e5 0%, #34495e 100%); transform: translateY(-2px); }
+.fade-out { opacity: 0; visibility: hidden; }
+
+/* --- RESTO DE COMPONENTES --- */
+.countdown { display: flex; justify-content: center; gap: 8px; margin: 25px auto; width: 95%; }
+.time-box {
+    background: #ffffff; padding: 10px 5px; border-radius: 8px; color: #777777; 
+    font-size: 0.85rem; border: 1px solid transparent; 
+    background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(120deg, #999 0%, #fff 25%, #aaa 50%, #fff 75%, #888 100%);
+    background-origin: border-box; background-clip: content-box, border-box;
+    flex: 1; min-width: 0; box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+}
+.time-box span { display: block; font-size: 1.6rem; font-weight: bold; color: #2d3436; }
+
+.video-container { max-width: 340px; width: 85%; margin: 30px auto; }
+iframe { width: 100%; aspect-ratio: 9 / 16; border: none; border-radius: 12px; display: block; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+
+.mapa-container { max-width: 480px; width: 85%; margin: 40px auto; }
+.mapa-container iframe { width: 100%; height: 300px; border: none; border-radius: 12px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); }
+
+.galeria-seccion { max-width: 340px; width: 85%; margin: 40px auto; }
+.galeria-masonry { column-width: 150px; column-gap: 20px; width: 100%; }
+.foto-card { 
+    break-inside: avoid; display: inline-block; width: 100%; margin-bottom: 40px;
+    background: rgba(255, 255, 255, 0.7); padding: 8px; border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); backdrop-filter: blur(5px);
+}
+.foto-card img { width: 100%; height: auto; border-radius: 8px; }
+
+.dress-code-container { 
+    max-width: 340px; width: 85%; margin: 40px auto; 
+    background: rgba(255, 255, 255, 0.8); padding: 30px 20px; 
+    border-radius: 12px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* --- RESPONSIVE PARA PC --- */
+@media screen and (min-width: 768px) {
+    h1 { font-size: 4rem; margin-top: 40px; }
+    .galeria-seccion { max-width: 800px; }
+    .galeria-masonry { column-width: 250px; column-gap: 30px; }
+    .countdown { max-width: 800px; }
+    .video-container { max-width: 500px; }
+    .mapa-container { max-width: 800px; }
+    .dress-code-container { max-width: 800px; padding: 40px; }
+}
