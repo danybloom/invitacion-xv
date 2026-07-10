@@ -7,8 +7,16 @@ body {
     background-image: url(background.jpg);
     background-position: center center;
     background-repeat: no-repeat;
+<<<<<<< HEAD
     background-size: cover;
     background-attachment: fixed;
+=======
+    
+    /* CAMBIA ESTA LÍNEA */
+    background-size: contain; 
+    
+    background-attachment: scroll;
+>>>>>>> db33fa3
     color: #333333;
     text-align: center;
     margin: 0;
