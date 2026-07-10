@@ -10,6 +10,8 @@ body {
     text-align: center;
     margin: 0;
     padding: 20px;
+     -webkit-text-stroke: 1px #f7f7f9; /* El grosor y el color que pediste */
+    paint-order: stroke fill;
     }
 
 /* --- TÍTULOS CON DEGRADADO (h1 y h3) --- */
