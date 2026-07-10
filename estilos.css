@@ -4,11 +4,13 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #f7f7f9;
-    /* ESTA ES LA LÍNEA QUE TE FALTA O ESTÁ MAL ESCRITA: */
     background-image: url(background.jpg);
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover;
+    
+    /* CAMBIA ESTA LÍNEA */
+    background-size: contain; 
+    
     background-attachment: fixed;
     color: #333333;
     text-align: center;
