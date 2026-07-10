@@ -4,6 +4,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #f7f7f9;
+    /* ESTA ES LA LÍNEA QUE TE FALTA O ESTÁ MAL ESCRITA: */
     background-image: url(background.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -92,6 +93,20 @@ iframe { width: 100%; aspect-ratio: 9 / 16; border: none; border-radius: 12px; d
     max-width: 340px; width: 85%; margin: 40px auto; 
     background: rgba(255, 255, 255, 0.8); padding: 30px 20px; 
     border-radius: 12px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.music-btn {
+    background: linear-gradient(135deg, #bdc3c7 0%, #f5f6fa 50%, #7f8c8d 100%);
+    color: #2d3436;
+    border: 1px solid #b2bec3;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s;
 }
 
 /* --- RESPONSIVE PARA PC --- */
