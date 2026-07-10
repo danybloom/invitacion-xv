@@ -24,7 +24,12 @@ h1, h3 {
     margin-bottom: 5px;
 }
 
-h1 { font-size: 3rem; }
+h1 {
+    font-size: 3rem;
+    /* Agregamos estas dos líneas para el borde */
+    -webkit-text-stroke: 1px #2d3436; /* El grosor y el color que pediste */
+    paint-order: stroke fill;       /* Asegura que el borde no tape el relleno de la letra */
+ }
 h3 { font-size: 2.5rem; }
 
 /* --- TÍTULOS DE SECCIÓN UNIFICADOS (h2) --- */
@@ -33,6 +38,8 @@ h2 {
     font-size: 2rem;
     color: #2d3436;
     margin-bottom: 20px;
+    -webkit-text-stroke: 1px #f7f7f9; /* El grosor y el color que pediste */
+    paint-order: stroke fill;
 }
 
 /* --- ESTILOS INTRO (SOBRE + BOTÓN) --- */
