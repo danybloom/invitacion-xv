@@ -1,19 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,400&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,400&display=swap');
+
 /* --- ESTILOS BASE --- */
-/* --- ESTILOS BASE (Limpia el body) --- */
 body {
     font-family: 'Montserrat', sans-serif;
-    /* BORRA las líneas de background-image, size, attachment, etc. de aquí */
     background-color: #f7f7f9; 
     color: #333333;
     text-align: center;
     margin: 0;
     padding: 20px;
-    }
+}
 
+/* --- CABECERA DE PORTADA UNIFICADA --- */
+.header-portada {
+    text-align: center;
+    padding: 30px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0; /* Controlamos la distancia exacta con los márgenes individuales */
+}
+
+/* Aplica para "¡Mis" y "años!" */
+.linea-texto {
+    margin: 0;
+    line-height: 1.1;
+}
+
+/* Aplica específicamente para el "XV" grande central */
+.linea-xv {
+    font-size: 6rem; /* Tamaño imponente pero bien proporcionado */
+    margin: 5px 0;   /* Distancia exacta superior e inferior */
+    line-height: 0.95; 
+}
+
+/* Aplica para "Hanna Valentina" */
+.linea-nombre {
+    margin-top: 15px;
+    line-height: 1.1;
+}
 /* --- TÍTULOS CON DEGRADADO (h1 y h3) --- */
-h1, h3 {
+h1, h3, h4 {
     font-family: 'Playfair Display', serif;
     font-style: italic;
     background: linear-gradient(135deg, #bcc6cc 0%, #eee 25%, #9aa2a6 50%, #f6f6f6 75%, #8a9597 100%);
@@ -23,23 +51,34 @@ h1, h3 {
     font-weight: bold;
     margin-bottom: 5px;
 }
-p  {-webkit-text-stroke: 2px #f7f7f9; /* El grosor y el color que pediste */
-    paint-order: stroke fill;}
+p {
+    font-size: 1.35rem; /* 👈 Aumenta o disminuye este valor según prefieras */
+    -webkit-text-stroke: 1px #f7f7f9; /* Reduje sutilmente el trazo a 1px para que el texto luzca más nítido y legible */
+    paint-order: stroke fill;
+}
 h1 {
     font-size: 3rem;
     /* Agregamos estas dos líneas para el borde */
     -webkit-text-stroke: 1px #2d3436; /* El grosor y el color que pediste */
     paint-order: stroke fill;       /* Asegura que el borde no tape el relleno de la letra */
  }
-h3 { font-size: 2.5rem; }
+h3 { font-size: 10rem;
+-webkit-text-stroke: 1px #2d3436; /* El grosor y el color que pediste */
+    paint-order: stroke fill;       /* Asegura que el borde no tape el relleno de la letra */
+ }
+h4 { font-size: 2.75rem;
+-webkit-text-stroke: 1px #2d3436; /* El grosor y el color que pediste */
+    paint-order: stroke fill;       /* Asegura que el borde no tape el relleno de la letra */
+ }
 
 /* --- TÍTULOS DE SECCIÓN UNIFICADOS (h2) --- */
 h2 {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
     color: #2d3436;
-    margin-bottom: 20px;
-    -webkit-text-stroke: 1px #f7f7f9; /* El grosor y el color que pediste */
+    margin-top: 60px;   /* 👈 Espacio amplio antes de que empiece la sección */
+    margin-bottom: 25px; /* 👈 Espacio entre el título y el contenido que le sigue */
+    -webkit-text-stroke: 1px #f7f7f9;
     paint-order: stroke fill;
 }
 
@@ -97,18 +136,59 @@ h2 {
 }
 
 /* --- RESTO DE COMPONENTES --- */
-.countdown { display: flex; justify-content: center; gap: 8px; margin: 25px auto; width: 95%; }
-.time-box {
-    background: #ffffff; padding: 10px 5px; border-radius: 8px; color: #777777; 
-    font-size: 0.85rem; border: 1px solid transparent; 
-    background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(120deg, #999 0%, #fff 25%, #aaa 50%, #fff 75%, #888 100%);
-    background-origin: border-box; background-clip: content-box, border-box;
-    flex: 1; min-width: 0; box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+/* Contenedor principal: define el ancho total para celular y PC */
+.countdown { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    gap: 10px; 
+    margin: 50px auto; /* 👈 Aumenta el margen de arriba y abajo para separarlo de los textos */
+    width: 95%; 
+    max-width: 360px; 
 }
-.time-box span { display: block; font-size: 1.6rem; font-weight: bold; color: #2d3436; }
 
+/* Círculo del contador */
+.time-box {
+    background: #ffffff; 
+    border-radius: 50%; 
+    aspect-ratio: 1 / 1; 
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2px; /* Espacio mínimo para que el texto llene el círculo */
+    
+    color: #777777; 
+    font-size: 1.25rem; /* Tamaño de 'Días', 'Horas', 'Min', 'Seg' */
+    
+    /* Borde delgado con degradado plateado */
+    border: 3px solid transparent; 
+    background-image: linear-gradient(#ffffff, #ffffff), 
+                      linear-gradient(120deg, #999 0%, #fff 25%, #aaa 50%, #fff 75%, #888 100%);
+    background-origin: border-box; 
+    background-clip: padding-box, border-box;
+    
+    flex: 1; 
+    min-width: 0; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
 
-.mapa-container { max-width: 480px; width: 85%; margin: 40px auto; }
+/* Números principales destacados dentro del círculo */
+.time-box span { 
+    display: block; 
+    font-size: 3rem; /* 👈 Números más grandes para llenar el espacio */
+    font-weight: bold; 
+    color: #2d3436; 
+    line-height: 1;
+    margin-bottom: 2px;
+}
+
+.mapa-container { 
+    max-width: 480px; 
+    width: 85%; 
+    margin: 60px auto; /* 👈 Mayor separación para la sección del mapa */
+}
 .mapa-container iframe { width: 100%; height: 300px; border: none; border-radius: 12px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); }
 
 /* --- GALERÍA CENTRADA Y MÁS GRANDE --- */
