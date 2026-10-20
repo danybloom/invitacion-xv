@@ -148,36 +148,50 @@ h2 {
 }
 
 /* Círculo del contador */
+/* Contenedor del contador */
+.countdown { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    gap: 12px; /* Espacio uniforme entre círculos */
+    margin: 35px auto; 
+    width: 100%; 
+    max-width: 380px; 
+}
+
+/* Círculo del contador con dimensiones fijas proporcionales */
 .time-box {
     background: #ffffff; 
     border-radius: 50%; 
-    aspect-ratio: 1 / 1; 
+    
+    /* 👇 Forzamos un ancho y alto idéntico para que NUNCA se deformen */
+    width: 75px;
+    height: 75px;
     
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2px; /* Espacio mínimo para que el texto llene el círculo */
+    padding: 0;
     
     color: #777777; 
-    font-size: 1.25rem; /* Tamaño de 'Días', 'Horas', 'Min', 'Seg' */
+    font-size: 0.75rem; /* Tamaño para 'Días', 'Horas', etc. */
     
     /* Borde delgado con degradado plateado */
-    border: 3px solid transparent; 
+    border: 2px solid transparent; 
     background-image: linear-gradient(#ffffff, #ffffff), 
                       linear-gradient(120deg, #999 0%, #fff 25%, #aaa 50%, #fff 75%, #888 100%);
     background-origin: border-box; 
     background-clip: padding-box, border-box;
     
-    flex: 1; 
-    min-width: 0; 
     box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    flex-shrink: 0; /* Evita que se encojan o deformen */
 }
 
-/* Números principales destacados dentro del círculo */
+/* Números principales dentro del círculo */
 .time-box span { 
     display: block; 
-    font-size: 3rem; /* 👈 Números más grandes para llenar el espacio */
+    font-size: 1.5rem; /* Tamaño equilibrado para que no rebase el círculo */
     font-weight: bold; 
     color: #2d3436; 
     line-height: 1;
