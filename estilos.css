@@ -81,6 +81,15 @@ h2 {
     -webkit-text-stroke: 1px #f7f7f9;
     paint-order: stroke fill;
 }
+h5 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #2d3436;
+    margin-top: 25px;   /* 👈 Espacio amplio antes de que empiece la sección */
+    margin-bottom: 25px; /* 👈 Espacio entre el título y el contenido que le sigue */
+    -webkit-text-stroke: 1px #f7f7f9;
+    paint-order: stroke fill;
+}
 
 /* --- ESTILOS INTRO (SOBRE + BOTÓN) --- */
 #intro-overlay {
